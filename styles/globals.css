@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 duration-200;
+}
+
+.btn-alternative {
+  @apply py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-gray-400 rounded-md border border-gray-200 hover:bg-gray-500 focus:z-10 duration-200;
+}
+
+.char {
+  @apply w-11 h-11 border-[1px] flex justify-center items-center m-1 rounded-xl;
+}
+
+.char-active {
+  @apply bg-gray-500 text-white hover:bg-gray-700 cursor-pointer duration-200;
+}
+
+.password {
+  @apply text-xl text-gray-500 tracking-widest border-[1px] p-2 rounded-md w-full text-center cursor-copy;
+}
