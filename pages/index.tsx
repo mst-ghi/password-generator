@@ -46,10 +46,10 @@ const Home: NextPage = () => {
         <title>Password Generator</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="flex flex-col justify-center items-center space-y-5 py-10">
+      <div className="flex flex-col justify-center items-center space-y-5 py-10 h-screen">
         <div className="flex flex-row items-center justify-center space-x-2 w-1/2">
           <button
-            className="btn-alternative w-[200px]"
+            className="btn-alternative w-full"
             onClick={() => setPassword(randomString(length))}
           >
             Generate New
@@ -65,6 +65,15 @@ const Home: NextPage = () => {
             }}
           />
         </div>
+
+        <motion.ul
+          initial={{ "--scale": 0.8 } as any}
+          animate={{ "--scale": 1.1 } as any}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="flex flex-wrap w-1/2 justify-center border-[1px] py-1 rounded-lg bg-gray-50"
+        >
+          {renderChars()}
+        </motion.ul>
 
         <div
           className="w-1/2 flex justify-center items-center relative"
@@ -91,15 +100,6 @@ const Home: NextPage = () => {
 
           <span className="password">{password}</span>
         </div>
-
-        <motion.ul
-          initial={{ "--scale": 0.8 } as any}
-          animate={{ "--scale": 1.1 } as any}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-wrap w-1/2 justify-center border-[1px] py-1 rounded-lg bg-gray-50"
-        >
-          {renderChars()}
-        </motion.ul>
       </div>
     </div>
   );
